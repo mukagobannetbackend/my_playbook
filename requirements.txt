@@ -1,0 +1,11 @@
+Flask==3.1.2
+Flask-Login==0.6.3
+Flask-Mail==0.10.0
+Flask-Migrate==4.1.0
+Flask-SQLAlchemy==3.1.1
+Flask-WTF==1.2.2
+Gunicorn==23.0.0
+Pillow==11.3.0
+PyMySQL==1.1.1
+certifi==2026.7.22
+requests==2.32.5

@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Notifications{% endblock %}
+{% block content %}
+<div class="page-heading heading-row"><div><div class="eyebrow">YOUR INBOX</div><h1>Notes from your journal.</h1><p class="subheading">Small updates about the moments you’ve saved.</p></div>{% if notifications %}<form method="post" class="mark-read-form"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="button button-soft" type="submit">Mark all as read</button></form>{% endif %}</div>
+{% if notifications %}<div class="notification-list">{% for note in notifications %}<article class="notification-item {% if not note.read_at %}unread{% endif %}"><span class="notification-symbol">{% if note.kind == 'security' %}◈{% else %}◫{% endif %}</span><div class="notification-copy"><b>{{ note.title }}</b><p>{{ note.body }}</p><small>{{ note.created_at.strftime('%b %-d, %Y · %H:%M') }}</small></div>{% if not note.read_at %}<span class="unread-dot" aria-label="Unread"></span>{% endif %}</article>{% endfor %}</div>{% else %}<section class="empty-state inbox-empty"><span class="empty-orbit"><i></i></span><h3>A little breathing room.</h3><p>When your journal has a useful update, you’ll find it here.</p></section>{% endif %}
+{% endblock %}

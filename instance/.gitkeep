@@ -1,0 +1,1 @@
+TradeVault writes local development-only files beneath this directory; production uses the managed database and durable object storage.
