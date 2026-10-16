@@ -86,7 +86,7 @@ def create_app(test_config: dict | None = None) -> Flask:
         SESSION_COOKIE_SAMESITE="None" if cookie_secure else "Lax",
         PERMANENT_SESSION_LIFETIME=timedelta(days=14),
         MAX_CONTENT_LENGTH=16 * 1024 * 1024,
-        WTF_CSRF_TIME_LIMIT=timedelta(hours=2),
+        WTF_CSRF_TIME_LIMIT=7200,
         MAIL_SERVER=os.getenv("MAIL_SERVER"),
         MAIL_PORT=int(os.getenv("MAIL_PORT", "587")),
         MAIL_USE_TLS=os.getenv("MAIL_USE_TLS", "true").lower() == "true",
